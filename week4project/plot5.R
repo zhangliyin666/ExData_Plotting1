@@ -6,7 +6,7 @@ sumSCC <- readRDS("summarySCC_PM25.rds")
 v2 <- SCC[grep(pattern="Vehicles",SCC$EI.Sector),]
 v2 <- as.character(v2$SCC)
 data_Bal <- sumSCC[which(sumSCC$SCC %in% v2),]
-data_Bal <- subset(data_Bal,fips == 24510)
+data_Bal <- subset(data_Bal,fips == "24510")
 total_Bal <- aggregate(Emissions ~ year , data_Bal, sum)
 
 # plot
